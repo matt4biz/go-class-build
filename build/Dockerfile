@@ -12,9 +12,11 @@ COPY go.sum /home/sort
 COPY cmd    /home/sort/cmd
 COPY *.go   /home/sort
 
+ARG VERSION
+
 RUN CGO_ENABLED=0 go build -a -tags netgo,osusergo \
     -ldflags "-extldflags '-static' -s -w" \
-    -ldflags "-X main.version=FIXME" -o sort ./cmd/sort
+    -ldflags "-X main.version=$VERSION" -o sort ./cmd/sort
 
 FROM busybox:musl
 

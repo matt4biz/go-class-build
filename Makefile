@@ -19,7 +19,7 @@ committed:
 	@git diff --exit-code > /dev/null || (echo "** COMMIT YOUR CHANGES FIRST **"; exit 1)
 
 docker: $(SOURCES) build/Dockerfile
-	sed -e "/FIXME/s/FIXME/${VERSION}/" < build/Dockerfile|docker build -t sort-anim:latest . -f -
+	docker build -t sort-anim:latest . -f build/Dockerfile --build-arg VERSION=$(VERSION)
 
 .PHONY: publish
 publish: committed lint
