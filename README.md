@@ -1,6 +1,8 @@
 # Go class: Build example
 Docker build example (using sort animation)
 
+You can find the contain on Docker Hub under [matthol2/sort-anim](https://hub.docker.com/repository/docker/matthol2/sort-anim). (I may rename that account to matt4biz to match these repos; if you don't see it, search on "sort-anim".)
+
 ## Sort animation
 
 Routes:
